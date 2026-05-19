@@ -2,7 +2,7 @@
 
 ## Summary
 
-- **Completed:** 16 / 33
+- **Completed:** 17 / 33
 - **Remaining:** 20 / 33
 - **Last updated:** 2026-05-19
 
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 17 — Zustand engineStore
+## ⏭️ NEXT TASK TO START: Task 18 — Zustand uiStore
 
 ---
 
@@ -52,7 +52,7 @@
 
 ## Phase 6 — State Stores
 
-- [ ] **Task 17** — Zustand `engineStore`
+- [x] **Task 17** — Zustand `engineStore`
 - [ ] **Task 18** — Zustand `uiStore`
 
 ## Phase 7 — React Hooks
