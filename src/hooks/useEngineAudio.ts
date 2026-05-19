@@ -13,6 +13,8 @@ interface UseEngineAudioReturn {
   readonly targetRPM: number;
   readonly isEngineRunning: boolean;
   readonly activePreset: EnginePreset | null;
+  readonly waveformAnalyser: AnalyserNode | null;
+  readonly spectrumAnalyser: AnalyserNode | null;
   initialize: () => Promise<void>;
   coldStart: () => void;
   killEngine: () => void;
@@ -158,6 +160,8 @@ export function useEngineAudio(): UseEngineAudioReturn {
     targetRPM,
     isEngineRunning,
     activePreset,
+    waveformAnalyser: audioEngineRef.current?.waveformAnalyser ?? null,
+    spectrumAnalyser: audioEngineRef.current?.spectrumAnalyser ?? null,
     initialize,
     coldStart,
     killEngine,

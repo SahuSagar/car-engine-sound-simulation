@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 29 / 33
-- **Remaining:** 9 / 33
+- **Completed:** 30 / 33
+- **Remaining:** 8 / 33
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 30 — Assemble full simulator layout
+## ⏭️ NEXT TASK TO START: Task 31 — Keyboard shortcuts hook (`useKeyboardShortcuts`)
 
 ---
 
@@ -77,7 +77,7 @@
 
 ## Phase 10 — Integration
 
-- [ ] **Task 30** — Assemble full simulator layout
+- [x] **Task 30** — Assemble full simulator layout
 - [ ] **Task 31** — Keyboard shortcuts hook (`useKeyboardShortcuts`)
 - [ ] **Task 32** — Audio recording + export (`useAudioRecorder`)
 - [ ] **Task 33** — Settings panel

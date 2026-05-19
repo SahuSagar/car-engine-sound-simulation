@@ -5,6 +5,8 @@ import type { AudioEngineConfig } from '@/types/audio.types';
 export class AudioEngine implements IAudioEngine {
   private _context: AudioContext | null = null;
   private _masterGain: GainNode | null = null;
+  private _waveformAnalyser: AnalyserNode | null = null;
+  private _spectrumAnalyser: AnalyserNode | null = null;
   private _state: EngineLifecycleState = 'uninitialized';
   private _config: Required<AudioEngineConfig>;
 
@@ -30,7 +32,18 @@ export class AudioEngine implements IAudioEngine {
 
       this._masterGain = this._context.createGain();
       this._masterGain.gain.value = 0.5;
+
+      // Passive analyser taps — both listen off master gain, not in the signal chain
+      this._waveformAnalyser = this._context.createAnalyser();
+      this._waveformAnalyser.fftSize = 2048;
+
+      this._spectrumAnalyser = this._context.createAnalyser();
+      this._spectrumAnalyser.fftSize = 2048;
+      this._spectrumAnalyser.smoothingTimeConstant = 0.8;
+
       this._masterGain.connect(this._context.destination);
+      this._masterGain.connect(this._waveformAnalyser);
+      this._masterGain.connect(this._spectrumAnalyser);
 
       this._state = 'running';
     } catch (error) {
@@ -92,5 +105,13 @@ export class AudioEngine implements IAudioEngine {
 
   get state(): EngineLifecycleState {
     return this._state;
+  }
+
+  get waveformAnalyser(): AnalyserNode | null {
+    return this._waveformAnalyser;
+  }
+
+  get spectrumAnalyser(): AnalyserNode | null {
+    return this._spectrumAnalyser;
   }
 }

@@ -1,17 +1,351 @@
+/* ── Shell ───────────────────────────────────────────────────────────── */
+
 .core {
-  width: 100%;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   background: var(--color-bg);
+  overflow: hidden;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+
+.header {
   display: flex;
   align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-6);
+  background: rgba(17, 17, 19, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.headerBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.brandDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  box-shadow: 0 0 8px var(--color-primary);
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.25em;
+  color: var(--color-text);
+}
+
+.headerSelector {
+  flex: 1;
+  min-width: 0;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.statusChip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+}
+
+/* ── Main 2-column layout ────────────────────────────────────────────── */
+
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 420px) 1fr;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  min-height: 0;
+  align-items: start;
+}
+
+/* ── Gauge panel (left) ──────────────────────────────────────────────── */
+
+.gaugePanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.gaugeWrapper {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+}
+
+.miniGauges {
+  display: flex;
+  gap: var(--space-6);
   justify-content: center;
 }
 
-.readyLabel {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
+/* ── Visualizer panel (right) ────────────────────────────────────────── */
+
+.visualizerPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.oscilloscopeWrapper {
+  height: 180px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 255, 136, 0.06) inset;
+}
+
+.spectrumWrapper {
+  height: 160px;
+  border: 1px solid rgba(232, 255, 0, 0.1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(232, 255, 0, 0.04) inset;
+}
+
+/* Engine metadata readout */
+
+.engineMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-8);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.metaRow {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaKey {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-text-muted);
   text-transform: uppercase;
+}
+
+.metaValue {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text);
+}
+
+.metaValueDanger {
+  color: var(--color-danger);
+}
+
+/* ── Control dock (bottom) ───────────────────────────────────────────── */
+
+.dock {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Start / Stop button */
+
+.startButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    border-color 150ms var(--ease-out),
+    color 150ms var(--ease-out),
+    box-shadow 150ms var(--ease-out),
+    transform 150ms var(--ease-spring);
+}
+
+.startButton:hover:not(:disabled) {
+  border-color: var(--color-primary);
   color: var(--color-primary);
+}
+
+.startButton:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.startButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.startButtonRunning {
+  border-color: rgba(0, 255, 100, 0.5);
+  color: #00ff64;
+  box-shadow:
+    0 0 12px rgba(0, 255, 100, 0.2),
+    0 0 24px rgba(0, 255, 100, 0.08);
+}
+
+.startButtonRunning:hover:not(:disabled) {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  box-shadow:
+    0 0 12px var(--color-danger-glow),
+    0 0 24px rgba(255, 32, 32, 0.1);
+}
+
+.startIcon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.startLabel {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+/* Throttle takes remaining width */
+
+.throttleWrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Tablet (768px – 1024px) ─────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .main {
+    grid-template-columns: minmax(0, 320px) 1fr;
+    gap: var(--space-4);
+    padding: var(--space-4);
+  }
+
+  .oscilloscopeWrapper {
+    height: 140px;
+  }
+
+  .spectrumWrapper {
+    height: 120px;
+  }
+}
+
+/* ── Mobile (< 768px) ────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .header {
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .brandName {
+    font-size: 0.75rem;
+  }
+
+  .statusChip {
+    display: none;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    padding-bottom: 180px; /* room for fixed dock */
+  }
+
+  .gaugePanel {
+    gap: var(--space-3);
+  }
+
+  .gaugeWrapper {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* Mini gauges hidden on mobile per spec */
+  .miniGauges {
+    display: none;
+  }
+
+  .oscilloscopeWrapper {
+    height: 120px;
+  }
+
+  .spectrumWrapper {
+    height: 100px;
+  }
+
+  /* Fixed dock on mobile */
+  .dock {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    z-index: 20;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .startButton {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .throttleWrapper {
+    width: 100%;
+  }
+}
+
+/* ── Wide (> 1440px) ─────────────────────────────────────────────────── */
+
+@media (min-width: 1440px) {
+  .core {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .startButton {
+    transition: none;
+  }
 }
