@@ -47,18 +47,18 @@ No debates. This is the config. `pnpm lint --fix` resolves all auto-fixable issu
 ```json
 {
   "scripts": {
-    "dev":            "next dev --turbopack",
-    "build":          "next build",
-    "start":          "next start",
-    "typecheck":      "tsc --noEmit",
-    "lint":           "next lint",
-    "lint:fix":       "next lint --fix",
-    "format":         "prettier --write .",
-    "format:check":   "prettier --check .",
-    "test":           "vitest",
-    "test:run":       "vitest run",
-    "test:coverage":  "vitest run --coverage",
-    "test:ui":        "vitest --ui"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
   }
 }
 ```
@@ -147,6 +147,7 @@ Pin versions in `.nvmrc` and `package.json#engines`:
 ```
 
 `.nvmrc`:
+
 ```
 20
 ```

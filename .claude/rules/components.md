@@ -27,6 +27,7 @@ Never import the internal file directly.
 ## No Business Logic in Components
 
 Components handle only:
+
 - Rendering JSX
 - Reading from hooks
 - Dispatching user events to hooks
@@ -96,6 +97,7 @@ export const Oscilloscope: FC<OscilloscopeProps> = ({ analyserNode }) => {
 ```
 
 Rules:
+
 - Canvas `width` and `height` attributes must be set programmatically to match `devicePixelRatio` for crisp rendering on retina displays.
 - Always cleanup `cancelAnimationFrame` on unmount.
 - Never read canvas pixel data — write only.
@@ -107,7 +109,9 @@ Rules:
 const arcPath = useMemo(() => computeGaugeArc(currentRPM, redlineRPM), [currentRPM, redlineRPM]);
 
 // ✅ Stabilize callbacks passed to child components
-const handleThrottlePress = useCallback(() => { engineSim.setThrottle(1); }, [engineSim]);
+const handleThrottlePress = useCallback(() => {
+  engineSim.setThrottle(1);
+}, [engineSim]);
 
 // ❌ Don't memoize everything — only when re-render cost is measurable
 const label = useMemo(() => `${rpm} RPM`, [rpm]); // wasteful

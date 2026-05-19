@@ -14,14 +14,14 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@/engine/*":     ["src/engine/*"],
+      "@/engine/*": ["src/engine/*"],
       "@/components/*": ["src/components/*"],
-      "@/hooks/*":      ["src/hooks/*"],
-      "@/store/*":      ["src/store/*"],
-      "@/types/*":      ["src/types/*"],
-      "@/utils/*":      ["src/utils/*"],
-      "@/constants/*":  ["src/constants/*"],
-      "@/workers/*":    ["src/workers/*"]
+      "@/hooks/*": ["src/hooks/*"],
+      "@/store/*": ["src/store/*"],
+      "@/types/*": ["src/types/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/constants/*": ["src/constants/*"],
+      "@/workers/*": ["src/workers/*"]
     }
   }
 }
@@ -65,22 +65,20 @@ export const EngineState = {
   Redline: 'redline',
   Dead: 'dead',
 } as const;
-export type EngineState = typeof EngineState[keyof typeof EngineState];
+export type EngineState = (typeof EngineState)[keyof typeof EngineState];
 
 // ❌ — TypeScript enums compile to weird JS
-enum EngineState { Idle, Running }
+enum EngineState {
+  Idle,
+  Running,
+}
 ```
 
 ## Narrowing Pattern
 
 ```ts
 function isEnginePreset(v: unknown): v is EnginePreset {
-  return (
-    typeof v === 'object' &&
-    v !== null &&
-    'id' in v &&
-    'cylinders' in v
-  );
+  return typeof v === 'object' && v !== null && 'id' in v && 'cylinders' in v;
 }
 ```
 
@@ -96,8 +94,8 @@ Key types to always keep updated:
 // engine.types.ts
 export interface HarmonicConfig {
   readonly multiplier: number;
-  readonly amplitude: number;  // 0–1
-  readonly detune: number;     // cents
+  readonly amplitude: number; // 0–1
+  readonly detune: number; // cents
 }
 
 export interface EnginePreset {
@@ -107,9 +105,9 @@ export interface EnginePreset {
   readonly idleRPM: number;
   readonly redlineRPM: number;
   readonly harmonics: readonly HarmonicConfig[];
-  readonly exhaustResonance: number;  // Hz
-  readonly inductionNoise: number;    // 0–1
-  readonly mechanicalNoise: number;   // 0–1
+  readonly exhaustResonance: number; // Hz
+  readonly inductionNoise: number; // 0–1
+  readonly mechanicalNoise: number; // 0–1
 }
 
 // audio.types.ts
@@ -123,6 +121,7 @@ export interface AudioEngineState {
 ## Utility Type Usage
 
 Prefer built-in utility types:
+
 - `Readonly<T>` — freeze object shape
 - `Pick<T, K>` / `Omit<T, K>` — shape derivation
 - `ReturnType<typeof fn>` — derive from implementation, not duplicate

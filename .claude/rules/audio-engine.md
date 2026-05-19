@@ -124,7 +124,7 @@ Two separate `AnalyserNode`s — one for waveform (oscilloscope), one for FFT (s
 const waveformAnalyser = ctx.createAnalyser();
 waveformAnalyser.fftSize = 2048;
 
-// Spectrum analyser  
+// Spectrum analyser
 const spectrumAnalyser = ctx.createAnalyser();
 spectrumAnalyser.fftSize = 2048;
 spectrumAnalyser.smoothingTimeConstant = 0.8;
@@ -150,9 +150,9 @@ Call `dispose()` in the React hook's `useEffect` cleanup. Failing to do so leaks
 
 ## Error States
 
-| Condition | Response |
-|-----------|----------|
-| `AudioContext` blocked by autoplay policy | Show "Tap anywhere to enable audio" overlay |
-| `AudioContext` creation throws | Set status `'error'`, show `<AudioUnsupportedBanner />` |
-| `AudioWorklet` load fails | Fall back to `ScriptProcessorNode`, log warning |
-| Preset JSON malformed | Throw typed error, fall back to `inline-4` default |
+| Condition                                 | Response                                                |
+| ----------------------------------------- | ------------------------------------------------------- |
+| `AudioContext` blocked by autoplay policy | Show "Tap anywhere to enable audio" overlay             |
+| `AudioContext` creation throws            | Set status `'error'`, show `<AudioUnsupportedBanner />` |
+| `AudioWorklet` load fails                 | Fall back to `ScriptProcessorNode`, log warning         |
+| Preset JSON malformed                     | Throw typed error, fall back to `inline-4` default      |

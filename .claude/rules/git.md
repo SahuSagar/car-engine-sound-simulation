@@ -42,6 +42,7 @@ Never: `my-branch`, `fix-stuff`, `test`, `wip`.
 `engine`, `oscillator`, `noise`, `filter`, `preset`, `gauge`, `throttle`, `oscilloscope`, `spectrum`, `hooks`, `store`, `ui`, `tooling`, `ci`, `deps`
 
 **Examples:**
+
 ```
 feat(engine): add V12 harmonic preset with 6-cylinder pairing
 fix(oscillator): prevent gain spike on AudioContext cold start
@@ -52,10 +53,11 @@ chore(deps): upgrade next to 15.2.0
 ```
 
 **Rules:**
+
 - Subject line max **72 characters**.
 - No period at the end of subject.
 - Use imperative mood: "add", "fix", "remove" — not "added", "fixed", "removed".
-- Body explains *why*, not *what*. The diff shows what.
+- Body explains _why_, not _what_. The diff shows what.
 
 ## Workflow
 

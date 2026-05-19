@@ -19,6 +19,7 @@ Every file that uses any of the following **must have `'use client'` as its very
 - Canvas / `requestAnimationFrame`
 
 Files that do NOT need `'use client'`:
+
 - `src/app/layout.tsx`
 - `src/app/page.tsx`
 - All `src/engine/*.ts` files (pure TS, no browser APIs at import time)
@@ -74,10 +75,10 @@ All client-accessible env vars are prefixed `NEXT_PUBLIC_`. Server-only vars hav
 
 ```ts
 // ✅ Client-safe
-process.env.NEXT_PUBLIC_DEFAULT_PRESET
+process.env.NEXT_PUBLIC_DEFAULT_PRESET;
 
 // ❌ Not accessible in browser — will be undefined
-process.env.SECRET_KEY
+process.env.SECRET_KEY;
 ```
 
 ## next.config.ts
