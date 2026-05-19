@@ -2,7 +2,7 @@
 
 ## Summary
 
-- **Completed:** 14 / 33
+- **Completed:** 15 / 33
 - **Remaining:** 20 / 33
 - **Last updated:** 2026-05-19
 
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 15 — FilterChain
+## ⏭️ NEXT TASK TO START: Task 16 — EngineSimulator
 
 ---
 
@@ -47,7 +47,7 @@
 - [x] **Task 12** — `AudioEngine` class
 - [x] **Task 13** — `OscillatorBank`
 - [x] **Task 14** — `NoiseGenerator`
-- [ ] **Task 15** — `FilterChain`
+- [x] **Task 15** — `FilterChain`
 - [ ] **Task 16** — `EngineSimulator`
 
 ## Phase 6 — State Stores
