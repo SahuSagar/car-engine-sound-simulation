@@ -2,7 +2,7 @@
 
 ## Summary
 
-- **Completed:** 26 / 33
+- **Completed:** 27 / 33
 - **Remaining:** 10 / 33
 - **Last updated:** 2026-05-19
 
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 27 — Oscilloscope component
+## ⏭️ NEXT TASK TO START: Task 28 — SpectrumAnalyzer component
 
 ---
 
@@ -71,7 +71,7 @@
 - [x] **Task 24** — `EngineSelector` component
 - [x] **Task 25** — `RPMGauge` component
 - [x] **Task 26** — `ThrottleControl` component
-- [ ] **Task 27** — `Oscilloscope` component
+- [x] **Task 27** — `Oscilloscope` component
 - [ ] **Task 28** — `SpectrumAnalyzer` component
 - [ ] **Task 29** — `MiniGauge` component (decorative)
 
