@@ -1,3 +1,10 @@
+## MVP Note
+
+For the MVP phase, unit tests are deferred. The test
+infrastructure (vitest.config.ts, mocks, setup.ts) is
+in place but test files are not written until after
+core features ship. Integration tests only for Phase 11.
+
 # Component Rules
 
 ## Every Component Is a Client Component

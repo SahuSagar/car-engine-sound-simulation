@@ -1,0 +1,22 @@
+{
+  "id": "rotary",
+  "name": "Rotary Unique",
+  "cylinders": 2,
+  "idleRPM": 900,
+  "redlineRPM": 9000,
+  "firingFactor": 1.0,
+  "harmonics": [
+    { "harmonic": 1, "amplitude": 1.0 },
+    { "harmonic": 2, "amplitude": 0.6 },
+    { "harmonic": 3, "amplitude": 0.42 },
+    { "harmonic": 4, "amplitude": 0.3 },
+    { "harmonic": 5, "amplitude": 0.2 },
+    { "harmonic": 6, "amplitude": 0.14 }
+  ],
+  "exhaustResonance": 420,
+  "accelerationRate": 2400,
+  "decelerationRate": 1600,
+  "combustionNoiseLevel": 0.48,
+  "mechanicalNoiseLevel": 0.38,
+  "filterCurves": []
+}

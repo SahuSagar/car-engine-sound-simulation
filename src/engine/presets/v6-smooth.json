@@ -1,0 +1,22 @@
+{
+  "id": "v6-smooth",
+  "name": "V6 Smooth",
+  "cylinders": 6,
+  "idleRPM": 650,
+  "redlineRPM": 6800,
+  "firingFactor": 0.667,
+  "harmonics": [
+    { "harmonic": 1, "amplitude": 1.0 },
+    { "harmonic": 2, "amplitude": 0.38 },
+    { "harmonic": 3, "amplitude": 0.25 },
+    { "harmonic": 4, "amplitude": 0.18 },
+    { "harmonic": 5, "amplitude": 0.1 },
+    { "harmonic": 6, "amplitude": 0.07 }
+  ],
+  "exhaustResonance": 320,
+  "accelerationRate": 1600,
+  "decelerationRate": 1100,
+  "combustionNoiseLevel": 0.3,
+  "mechanicalNoiseLevel": 0.2,
+  "filterCurves": []
+}

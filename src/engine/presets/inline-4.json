@@ -1,0 +1,22 @@
+{
+  "id": "inline-4",
+  "name": "Inline 4-Cylinder",
+  "cylinders": 4,
+  "idleRPM": 750,
+  "redlineRPM": 7200,
+  "firingFactor": 0.5,
+  "harmonics": [
+    { "harmonic": 1, "amplitude": 1.0 },
+    { "harmonic": 2, "amplitude": 0.45 },
+    { "harmonic": 3, "amplitude": 0.3 },
+    { "harmonic": 4, "amplitude": 0.2 },
+    { "harmonic": 5, "amplitude": 0.12 },
+    { "harmonic": 6, "amplitude": 0.08 }
+  ],
+  "exhaustResonance": 280,
+  "accelerationRate": 1800,
+  "decelerationRate": 1200,
+  "combustionNoiseLevel": 0.35,
+  "mechanicalNoiseLevel": 0.25,
+  "filterCurves": []
+}

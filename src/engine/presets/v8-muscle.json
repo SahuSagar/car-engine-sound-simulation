@@ -1,0 +1,22 @@
+{
+  "id": "v8-muscle",
+  "name": "V8 Muscle",
+  "cylinders": 8,
+  "idleRPM": 800,
+  "redlineRPM": 6500,
+  "firingFactor": 0.5,
+  "harmonics": [
+    { "harmonic": 1, "amplitude": 1.0 },
+    { "harmonic": 2, "amplitude": 0.52 },
+    { "harmonic": 3, "amplitude": 0.35 },
+    { "harmonic": 4, "amplitude": 0.25 },
+    { "harmonic": 5, "amplitude": 0.15 },
+    { "harmonic": 6, "amplitude": 0.1 }
+  ],
+  "exhaustResonance": 240,
+  "accelerationRate": 2000,
+  "decelerationRate": 1400,
+  "combustionNoiseLevel": 0.42,
+  "mechanicalNoiseLevel": 0.32,
+  "filterCurves": []
+}

@@ -1,0 +1,22 @@
+{
+  "id": "v12-exotic",
+  "name": "V12 Exotic",
+  "cylinders": 12,
+  "idleRPM": 600,
+  "redlineRPM": 8500,
+  "firingFactor": 0.5,
+  "harmonics": [
+    { "harmonic": 1, "amplitude": 1.0 },
+    { "harmonic": 2, "amplitude": 0.48 },
+    { "harmonic": 3, "amplitude": 0.32 },
+    { "harmonic": 4, "amplitude": 0.22 },
+    { "harmonic": 5, "amplitude": 0.14 },
+    { "harmonic": 6, "amplitude": 0.09 }
+  ],
+  "exhaustResonance": 350,
+  "accelerationRate": 1400,
+  "decelerationRate": 900,
+  "combustionNoiseLevel": 0.28,
+  "mechanicalNoiseLevel": 0.18,
+  "filterCurves": []
+}
