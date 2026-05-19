@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 12 / 33
-- **Remaining:** 21 / 33
+- **Completed:** 13 / 33
+- **Remaining:** 20 / 33
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 13 — NoiseGenerator
+## ⏭️ NEXT TASK TO START: Task 14 — NoiseGenerator
 
 ---
 
@@ -45,7 +45,7 @@
 
 - [x] **Task 11** — Engine presets
 - [x] **Task 12** — `AudioEngine` class
-- [ ] **Task 13** — `OscillatorBank`
+- [x] **Task 13** — `OscillatorBank`
 - [ ] **Task 14** — `NoiseGenerator`
 - [ ] **Task 15** — `FilterChain`
 - [ ] **Task 16** — `EngineSimulator`
