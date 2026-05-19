@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 10 / 33
-- **Remaining:** 28 / 33
+- **Completed:** 12 / 33
+- **Remaining:** 21 / 33
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 11 — Engine presets
+## ⏭️ NEXT TASK TO START: Task 13 — NoiseGenerator
 
 ---
 
@@ -39,45 +39,46 @@
 
 ## Phase 4 — Engine Presets
 
-- [ ] **Task 10** — 5 engine preset JSON files + `src/engine/presets/index.ts`
+- [x] **Task 10** — 5 engine preset JSON files + `src/engine/presets/index.ts`
 
 ## Phase 5 — Core Engine Modules
 
-- [ ] **Task 11** — `AudioEngine` class
-- [ ] **Task 12** — `OscillatorBank`
-- [ ] **Task 13** — `NoiseGenerator`
-- [ ] **Task 14** — `FilterChain`
-- [ ] **Task 15** — `EngineSimulator`
+- [x] **Task 11** — Engine presets
+- [x] **Task 12** — `AudioEngine` class
+- [ ] **Task 13** — `OscillatorBank`
+- [ ] **Task 14** — `NoiseGenerator`
+- [ ] **Task 15** — `FilterChain`
+- [ ] **Task 16** — `EngineSimulator`
 
 ## Phase 6 — State Stores
 
-- [ ] **Task 16** — Zustand `engineStore`
-- [ ] **Task 17** — Zustand `uiStore`
+- [ ] **Task 17** — Zustand `engineStore`
+- [ ] **Task 18** — Zustand `uiStore`
 
 ## Phase 7 — React Hooks
 
-- [ ] **Task 18** — `useEngineAudio` hook
-- [ ] **Task 19** — `useRPMController` hook
-- [ ] **Task 20** — `useEnginePreset` hook
+- [ ] **Task 19** — `useEngineAudio` hook
+- [ ] **Task 20** — `useRPMController` hook
+- [ ] **Task 21** — `useEnginePreset` hook
 
 ## Phase 8 — App Shell
 
-- [ ] **Task 21** — `SimulatorShell` + `SimulatorCore` (dynamic import)
-- [ ] **Task 22** — Finalize `layout.tsx`, `page.tsx`, `globals.css`
+- [ ] **Task 22** — `SimulatorShell` + `SimulatorCore` (dynamic import)
+- [ ] **Task 23** — Finalize `layout.tsx`, `page.tsx`, `globals.css`
 
 ## Phase 9 — Individual Components
 
-- [ ] **Task 23** — `EngineSelector` component
-- [ ] **Task 24** — `RPMGauge` component
-- [ ] **Task 25** — `ThrottleControl` component
-- [ ] **Task 26** — `Oscilloscope` component
-- [ ] **Task 27** — `SpectrumAnalyzer` component
-- [ ] **Task 28** — `MiniGauge` component (decorative)
+- [ ] **Task 24** — `EngineSelector` component
+- [ ] **Task 25** — `RPMGauge` component
+- [ ] **Task 26** — `ThrottleControl` component
+- [ ] **Task 27** — `Oscilloscope` component
+- [ ] **Task 28** — `SpectrumAnalyzer` component
+- [ ] **Task 29** — `MiniGauge` component (decorative)
 
 ## Phase 10 — Integration
 
-- [ ] **Task 29** — Assemble full simulator layout
-- [ ] **Task 30** — Keyboard shortcuts hook (`useKeyboardShortcuts`)
-- [ ] **Task 31** — Audio recording + export (`useAudioRecorder`)
-- [ ] **Task 32** — Settings panel
-- [ ] **Task 33** — Web Worker (`audioProcessor.worker.ts`)
+- [ ] **Task 30** — Assemble full simulator layout
+- [ ] **Task 31** — Keyboard shortcuts hook (`useKeyboardShortcuts`)
+- [ ] **Task 32** — Audio recording + export (`useAudioRecorder`)
+- [ ] **Task 33** — Settings panel
+- [ ] **Task 34** — Web Worker (`audioProcessor.worker.ts`)
