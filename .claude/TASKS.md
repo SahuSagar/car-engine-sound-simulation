@@ -2,7 +2,7 @@
 
 ## Summary
 
-- **Completed:** 17 / 33
+- **Completed:** 18 / 33
 - **Remaining:** 20 / 33
 - **Last updated:** 2026-05-19
 
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 18 — Zustand uiStore
+## ⏭️ NEXT TASK TO START: Task 19 — useEngineAudio hook
 
 ---
 
@@ -53,7 +53,7 @@
 ## Phase 6 — State Stores
 
 - [x] **Task 17** — Zustand `engineStore`
-- [ ] **Task 18** — Zustand `uiStore`
+- [x] **Task 18** — Zustand `uiStore`
 
 ## Phase 7 — React Hooks
 
