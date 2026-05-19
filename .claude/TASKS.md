@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 8 / 37
-- **Remaining:** 29 / 37
+- **Completed:** 10 / 37
+- **Remaining:** 28 / 37
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 10 — Audio utils + unit tests
+## ⏭️ NEXT TASK TO START: Task 11 — Engine presets
 
 ---
 
@@ -33,10 +33,10 @@
 
 ## Phase 3 — Engine (Types, Constants, Utils)
 
-- [ ] **Task 7** — TypeScript type definitions (`src/types/engine.types.ts`, `src/types/audio.types.ts`)
+- [x] **Task 7** — TypeScript type definitions (`src/types/engine.types.ts`, `src/types/audio.types.ts`)
 - [x] **Task 8** — Engine constants (`src/constants/engine.constants.ts`)
 - [x] **Task 9** — DSP utils + unit tests (`src/utils/dsp.utils.ts`, `tests/unit/dsp.utils.test.ts`)
-- [ ] **Task 10** — Audio utils + unit tests (`src/utils/audio.utils.ts`, `tests/unit/audio.utils.test.ts`)
+- [x] **Task 10** — Audio utils + unit tests (`src/utils/audio.utils.ts`, `tests/unit/audio.utils.test.ts`)
 
 ## Phase 4 — Engine Presets
 
