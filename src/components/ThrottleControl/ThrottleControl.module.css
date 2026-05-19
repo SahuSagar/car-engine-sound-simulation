@@ -1,0 +1,267 @@
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+/* ── Vertical slider (desktop only) ─────────────────────── */
+
+.sliderPanel {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  width: 48px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .sliderPanel {
+    display: flex;
+  }
+}
+
+.sliderTrack {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  background: var(--color-gauge-track);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.sliderFill {
+  width: 100%;
+  background: linear-gradient(to top, var(--color-primary-dim), var(--color-primary));
+  transition: height 60ms linear;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.sliderFillActive {
+  background: linear-gradient(to top, var(--color-primary-dim), var(--color-primary));
+  box-shadow: 0 0 12px rgba(232, 255, 0, 0.4);
+}
+
+.sliderFillRedline {
+  background: linear-gradient(to top, #cc1010, var(--color-danger));
+  box-shadow: 0 0 12px var(--color-danger-glow);
+}
+
+.sliderLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+
+.sliderLabel span:first-child {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.sliderLabel span:last-child {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+
+/* ── Hold button ─────────────────────────────────────────── */
+
+.holdButton {
+  flex: 1;
+  min-height: 72px;
+  background: var(--color-surface-raised);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  position: relative;
+  overflow: hidden;
+  transform: scale(1);
+  transition:
+    transform 150ms var(--ease-spring),
+    border-color 150ms var(--ease-out),
+    box-shadow 150ms var(--ease-out),
+    background-color 150ms var(--ease-out);
+
+  /* Carbon fiber texture */
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.015) 2px,
+    rgba(255, 255, 255, 0.015) 4px
+  );
+}
+
+.holdButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(255, 255, 255, 0.04) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.holdButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Active (pressed) state */
+.holdButtonActive {
+  transform: scale(0.97);
+  border-color: var(--color-primary);
+  background-color: rgba(232, 255, 0, 0.05);
+  box-shadow:
+    0 0 12px rgba(232, 255, 0, 0.25),
+    0 0 24px rgba(232, 255, 0, 0.1),
+    inset 0 0 20px rgba(232, 255, 0, 0.04);
+}
+
+/* Redline state */
+.holdButtonRedline {
+  border-color: var(--color-danger);
+  background-color: rgba(255, 32, 32, 0.06);
+  box-shadow:
+    0 0 16px var(--color-danger-glow),
+    0 0 32px rgba(255, 32, 32, 0.15);
+}
+
+/* Disabled (engine off) */
+.holdButtonDisabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.holdButtonDisabled:hover {
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+/* ── Button inner content ────────────────────────────────── */
+
+.buttonInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  pointer-events: none;
+}
+
+.buttonIcon {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  transition: color 150ms var(--ease-out);
+  line-height: 1;
+}
+
+.holdButtonActive .buttonIcon {
+  color: var(--color-primary);
+}
+
+.holdButtonRedline .buttonIcon {
+  color: var(--color-danger);
+}
+
+.buttonText {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  transition: color 150ms var(--ease-out);
+}
+
+.holdButtonActive .buttonText {
+  color: var(--color-primary);
+}
+
+.holdButtonRedline .buttonText {
+  color: var(--color-danger);
+}
+
+.redlineTag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  animation: redlinePulse 200ms ease-in-out alternate infinite;
+}
+
+@keyframes redlinePulse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── Mobile fixed bottom ─────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .wrapper {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-3);
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    z-index: 100;
+  }
+
+  .holdButton {
+    min-height: 80px;
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+
+  .buttonText {
+    font-size: 1rem;
+  }
+
+  .buttonIcon {
+    font-size: 1.5rem;
+  }
+}
+
+/* ── Reduced motion ──────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .holdButton {
+    transition: none;
+  }
+
+  .sliderFill {
+    transition: none;
+  }
+
+  .redlineTag {
+    animation: none;
+  }
+}
