@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 22 / 33
-- **Remaining:** 11 / 33
+- **Completed:** 24 / 33
+- **Remaining:** 10 / 33
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 23 — Finalize layout.tsx, page.tsx, globals.css
+## ⏭️ NEXT TASK TO START: Task 25 — RPMGauge component
 
 ---
 
@@ -64,11 +64,11 @@
 ## Phase 8 — App Shell
 
 - [x] **Task 22** — `SimulatorShell` + `SimulatorCore` (dynamic import)
-- [ ] **Task 23** — Finalize `layout.tsx`, `page.tsx`, `globals.css`
+- [x] **Task 23** — Finalize `layout.tsx`, `page.tsx`, `globals.css`
 
 ## Phase 9 — Individual Components
 
-- [ ] **Task 24** — `EngineSelector` component
+- [x] **Task 24** — `EngineSelector` component
 - [ ] **Task 25** — `RPMGauge` component
 - [ ] **Task 26** — `ThrottleControl` component
 - [ ] **Task 27** — `Oscilloscope` component
