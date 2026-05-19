@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 18 / 33
-- **Remaining:** 20 / 33
+- **Completed:** 20 / 33
+- **Remaining:** 13 / 33
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 19 — useEngineAudio hook
+## ⏭️ NEXT TASK TO START: Task 21 — useEnginePreset hook
 
 ---
 
@@ -57,8 +57,8 @@
 
 ## Phase 7 — React Hooks
 
-- [ ] **Task 19** — `useEngineAudio` hook
-- [ ] **Task 20** — `useRPMController` hook
+- [x] **Task 19** — `useEngineAudio` hook
+- [x] **Task 20** — `useRPMController` hook
 - [ ] **Task 21** — `useEnginePreset` hook
 
 ## Phase 8 — App Shell
