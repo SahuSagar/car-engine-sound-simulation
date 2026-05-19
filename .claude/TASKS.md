@@ -2,7 +2,7 @@
 
 ## Summary
 
-- **Completed:** 24 / 33
+- **Completed:** 25 / 33
 - **Remaining:** 10 / 33
 - **Last updated:** 2026-05-19
 
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 25 — RPMGauge component
+## ⏭️ NEXT TASK TO START: Task 26 — ThrottleControl component
 
 ---
 
@@ -69,7 +69,7 @@
 ## Phase 9 — Individual Components
 
 - [x] **Task 24** — `EngineSelector` component
-- [ ] **Task 25** — `RPMGauge` component
+- [x] **Task 25** — `RPMGauge` component
 - [ ] **Task 26** — `ThrottleControl` component
 - [ ] **Task 27** — `Oscilloscope` component
 - [ ] **Task 28** — `SpectrumAnalyzer` component

@@ -1,0 +1,200 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+/* Carbon fiber bezel */
+.bezel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.015) 2px,
+      rgba(255, 255, 255, 0.015) 4px
+    ),
+    var(--color-surface);
+  border: 2px solid var(--color-border);
+  box-shadow:
+    0 0 0 4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 32px rgba(0, 0, 0, 0.8),
+    0 0 0 8px #0a0a0a;
+}
+
+/* Glass reflection overlay */
+.glass {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Track arc (background) */
+.trackArc {
+  fill: none;
+  stroke: var(--color-gauge-track);
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+/* Zone 1: 0–70% — primary yellow */
+.zone1Arc {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+/* Zone 2: 70–90% — accent orange */
+.zone2Arc {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+/* Zone 3: 90–100% — danger red */
+.zone3Arc {
+  fill: none;
+  stroke: var(--color-danger);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.zone3Pulse {
+  animation: redlinePulse 200ms ease-in-out infinite alternate;
+}
+
+@keyframes redlinePulse {
+  from {
+    filter: drop-shadow(0 0 4px var(--color-danger)) drop-shadow(0 0 8px rgba(255, 32, 32, 0.5));
+    opacity: 0.9;
+  }
+  to {
+    filter: drop-shadow(0 0 12px var(--color-danger)) drop-shadow(0 0 24px rgba(255, 32, 32, 0.8));
+    opacity: 1;
+  }
+}
+
+/* Tick marks */
+.tickMajor {
+  stroke: var(--color-text);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.tickMinor {
+  stroke: var(--color-text-muted);
+  stroke-width: 1;
+  stroke-linecap: round;
+  opacity: 0.5;
+}
+
+.tickLabel {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  fill: var(--color-text-muted);
+}
+
+/* Needle */
+.needle {
+  stroke: var(--color-primary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px rgba(232, 255, 0, 0.6));
+}
+
+.needleRedline {
+  stroke: var(--color-danger);
+  filter: drop-shadow(0 0 6px var(--color-danger)) drop-shadow(0 0 12px rgba(255, 32, 32, 0.5));
+}
+
+.needlePivot {
+  fill: var(--color-surface-raised);
+  stroke: var(--color-border);
+  stroke-width: 2;
+}
+
+/* RPM number */
+.rpmNumber {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 700;
+  fill: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+/* RPM unit label */
+.rpmLabel {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  fill: var(--color-text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ×1000 scale label */
+.scaleLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  fill: var(--color-text-muted);
+  opacity: 0.6;
+}
+
+/* Redline container glow */
+.redlineActive .bezel {
+  box-shadow:
+    0 0 0 4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 4px 32px rgba(0, 0, 0, 0.8),
+    0 0 0 8px #0a0a0a,
+    0 0 32px var(--color-danger-glow),
+    0 0 64px rgba(255, 32, 32, 0.15);
+}
+
+/* Screen-reader only */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .zone3Pulse {
+    animation: none;
+  }
+
+  .needle,
+  .needleRedline {
+    filter: none;
+  }
+}
