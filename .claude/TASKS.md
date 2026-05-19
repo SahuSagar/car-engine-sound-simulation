@@ -2,7 +2,7 @@
 
 ## Summary
 
-- **Completed:** 20 / 33
+- **Completed:** 21 / 33
 - **Remaining:** 13 / 33
 - **Last updated:** 2026-05-19
 
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 21 — useEnginePreset hook
+## ⏭️ NEXT TASK TO START: Task 22 — SimulatorShell + SimulatorCore
 
 ---
 
@@ -59,7 +59,7 @@
 
 - [x] **Task 19** — `useEngineAudio` hook
 - [x] **Task 20** — `useRPMController` hook
-- [ ] **Task 21** — `useEnginePreset` hook
+- [x] **Task 21** — `useEnginePreset` hook
 
 ## Phase 8 — App Shell
 
