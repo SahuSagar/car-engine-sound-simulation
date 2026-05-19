@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 21 / 33
-- **Remaining:** 13 / 33
+- **Completed:** 22 / 33
+- **Remaining:** 11 / 33
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 22 — SimulatorShell + SimulatorCore
+## ⏭️ NEXT TASK TO START: Task 23 — Finalize layout.tsx, page.tsx, globals.css
 
 ---
 
@@ -63,7 +63,7 @@
 
 ## Phase 8 — App Shell
 
-- [ ] **Task 22** — `SimulatorShell` + `SimulatorCore` (dynamic import)
+- [x] **Task 22** — `SimulatorShell` + `SimulatorCore` (dynamic import)
 - [ ] **Task 23** — Finalize `layout.tsx`, `page.tsx`, `globals.css`
 
 ## Phase 9 — Individual Components
