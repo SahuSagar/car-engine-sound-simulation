@@ -2,8 +2,8 @@
 
 ## Summary
 
-- **Completed:** 28 / 33
-- **Remaining:** 10 / 33
+- **Completed:** 29 / 33
+- **Remaining:** 9 / 33
 - **Last updated:** 2026-05-19
 
 ## Per-task completion checklist
@@ -15,7 +15,7 @@
 - [ ] Mark task [x] in this file
 - [ ] /clear session before next task
 
-## ⏭️ NEXT TASK TO START: Task 29 — MiniGauge component (decorative)
+## ⏭️ NEXT TASK TO START: Task 30 — Assemble full simulator layout
 
 ---
 
@@ -73,7 +73,7 @@
 - [x] **Task 26** — `ThrottleControl` component
 - [x] **Task 27** — `Oscilloscope` component
 - [x] **Task 28** — `SpectrumAnalyzer` component
-- [ ] **Task 29** — `MiniGauge` component (decorative)
+- [x] **Task 29** — `MiniGauge` component (decorative)
 
 ## Phase 10 — Integration
 

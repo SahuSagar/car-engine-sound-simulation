@@ -1,0 +1,105 @@
+/* Desktop only — hidden on mobile */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  width: 80px;
+}
+
+.svg {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+
+/* Carbon fiber bezel */
+.bezelCircle {
+  fill: var(--color-surface);
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+/* Glass reflection overlay */
+.glassCircle {
+  fill: url(#glassGradient);
+  pointer-events: none;
+  opacity: 0.06;
+}
+
+/* Track arc (background) */
+.trackArc {
+  fill: none;
+  stroke: var(--color-gauge-track);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Oil Temp arc — interpolates blue (cold) → red (hot) via stroke color */
+.oilTempArc {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  /* Interpolate cold→hot: blue at 0, orange at 0.5, red at 1 */
+  stroke: color-mix(
+    in oklch,
+    #ff2020 calc(var(--heat, 0) * 100%),
+    #4488ff calc((1 - var(--heat, 0)) * 100%)
+  );
+  opacity: 0.9;
+}
+
+/* Voltage arc — static primary yellow */
+.voltageArc {
+  fill: none;
+  stroke: var(--color-primary);
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+/* Needle */
+.needle {
+  stroke: var(--color-text);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+/* Center pivot */
+.pivot {
+  fill: var(--color-surface-raised);
+  stroke: var(--color-border);
+  stroke-width: 1;
+}
+
+/* Cold/Hot / Low/High end markers */
+.markerLabel {
+  font-family: var(--font-mono);
+  font-size: 8px;
+  fill: var(--color-text-muted);
+}
+
+/* Gauge label below */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Hidden on mobile */
+@media (max-width: 767px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+/* Reduced motion: keep gauge functional but freeze arc animation */
+@media (prefers-reduced-motion: reduce) {
+  .oilTempArc {
+    transition: none;
+  }
+}
